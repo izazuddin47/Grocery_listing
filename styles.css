@@ -1,0 +1,159 @@
+body {
+    margin: 10;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    transition: background 0.3s;
+}
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #333;
+    padding: 15px 20px;
+    color: white;
+}
+
+.nav-left {
+    display: flex;
+    align-items: center;
+}
+
+.nav-icon {
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+}
+
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+}
+
+.navbar ul li {
+    display: inline;
+}
+
+.navbar ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.navbar ul li a:hover {
+    background-color: #555;
+}
+
+#searchBox {
+    padding: 5px;
+    border-radius: 5px;
+    border: none;
+}
+
+#darkModeToggle {
+    background-color: #444;
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#darkModeToggle:hover {
+    background-color: #666;
+}
+    .carousel {
+width: 100vw; /* Full screen width */
+height: 600px; /* Set fixed height */
+display: flex;
+justify-content: center;
+align-items: center;
+overflow: hidden;
+position: relative;
+padding: 0 20px; /* Adds a little margin on left & right */
+box-sizing: border-box;
+margin-top:5px;
+
+    }
+    .carousel img {
+        width: 115.5vw; /* Slightly wider than the screen */
+        height: 100%; /* Stays within 600px height */
+        object-fit: cover; /* Fills the space but keeps aspect ratio */
+        display: none;
+        position: absolute;
+        left: 40%;
+        transform: translateX(-50%); /* Keeps it centered */
+    }
+
+
+
+        .cards-container {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        .card {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            width: 200px;
+            text-align: center;
+        }
+        .dark-mode {
+            background-color:rgb(20, 23, 31);
+            color: white;
+        }
+        .dark-mode .navbar {
+            background: #1b2838;
+        }
+        .dark-mode .card {
+            background: #333;
+            color: white;
+        }
+
+        .cards-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.card {
+    background: #fff;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.card-image {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+h3 {
+    margin: 10px 0;
+}
+
+p {
+    font-size: 14px;
+    color: #555;
+}
