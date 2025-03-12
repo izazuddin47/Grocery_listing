@@ -39,34 +39,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $sql = "INSERT INTO grocery_items (item_name, category, other_category, quantity, price, image, availability) 
             VALUES ('$item_name', '$category', '$other_category', '$quantity', '$price', '$new_image_name', '$availability')";
 
-    if (mysqli_query($conn, $sql)) {
-        echo "<p style='color:green;'>Grocery item added successfully!</p>";
-    } else {
-        echo "<p style='color:red;'>Error: " . mysqli_error($conn) . "</p>";
-    }
-}
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $list_name = "Grocery List - " . date("F Y"); // Example: "Grocery List - March 2025"
+ 
 
-    // Insert into grocery_lists
-    $sql = "INSERT INTO grocery_items (item_name) VALUES ('$item_name')";
-    mysqli_query($conn, $sql);
-    $list_id = mysqli_insert_id($conn); // Get new list ID
+if (mysqli_query($conn, $sql)) {
+    echo "<p style='color:green;'>Grocery item added successfully!</p>";
+    header("Location: index.php"); // Redirect to prevent form resubmission
+    exit(); 
+} else {
+    echo "<p style='color:red;'>Error: " . mysqli_error($conn) . "</p>";
+}// Redirect back to home
 
-    // Insert grocery items linked to this list
-    $item_name = $_POST["itemName"];
-    $category = $_POST["category"];
-    $price = $_POST["price"];
-
-    $sql = "INSERT INTO grocery_items (item_name, category, price, list_id) 
-            VALUES ('$item_name', '$category', '$price', '$list_id')";
-    mysqli_query($conn, $sql);
-
-    header("Location: index.php"); // Redirect back to home
 }
 
-// Close Connection
-mysqli_close($conn);
 ?>
 
 

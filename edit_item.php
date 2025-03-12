@@ -8,7 +8,7 @@ if (!isset($_GET['id']) || empty($_GET['id'])) {
 
 $item_id = $_GET['id'];
 
-// Fetch item details
+// Fetch item detail
 $sql = "SELECT * FROM grocery_items WHERE id = ?";
 $stmt = mysqli_prepare($conn, $sql);
 mysqli_stmt_bind_param($stmt, "i", $item_id);
